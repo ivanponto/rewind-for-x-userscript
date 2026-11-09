@@ -9,11 +9,19 @@
 // @match        https://twitter.com/*
 // @run-at       document-idle
 // @noframes
+// @license     MIT
 // @grant        GM_getValue
 // @grant        GM_setValue
 // @grant        GM_addValueChangeListener
 // @grant        GM_registerMenuCommand
 // ==/UserScript==
+
+/*
+ * Rewind for X userscript — a Tampermonkey port of yetone/rewind-for-x.
+ * Copyright (c) 2026 yetone — MIT License, see LICENSE.
+ * Porting and mobile adaptations: ivanponto (2026).
+ * Upstream: https://github.com/yetone/rewind-for-x
+ */
 
 (() => {
   'use strict';

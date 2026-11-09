@@ -40,4 +40,5 @@ X（Twitter）首页时间线的"刚刚看过"抽屉：刷过、被顶掉的推�
 
 ## 许可
 
-遵循上游项目许可。仅供个人学习与效率用途。
+MIT License — 版权归上游作者 yetone（见 LICENSE），本移植版遵循同一许可，脚本头部保留版权与出处声明。
+原项目：[yetone/rewind-for-x](https://github.com/yetone/rewind-for-x)。
