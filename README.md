@@ -8,8 +8,8 @@ X（Twitter）首页时间线的"刚刚看过"抽屉：刷过、被顶掉的推�
 
 ## 安装
 
-1. 浏览器安装 [Tampermonkey](https://www.tampermonkey.net/) 或 [Violentmonkey](https://violentmonkey.github.io/)（手机端：Firefox / Edge / Kiwi 等支持扩展的浏览器均可）；
-2. 新建脚本，粘贴 `rewind-for-x.user.js` 的全部内容并保存；
+1. 浏览器安装 [Tampermonkey](https://www.tampermonkey.net/) 或 [Violentmonkey](https://violentmonkey.github.io/)（手机端：Firefox / Edge / Kiwi 等支持扩展的浏览器均可，Violentmonkey + Edge 安卓已实测可用）；
+2. 新建脚本，粘贴 `rewind-for-x.user.js` 的全部内容并保存；或将该文件直接拖入浏览器安装；
 3. 打开 [x.com](https://x.com) 首页刷推，右下角会出现悬浮按钮，点开即抽屉。
 
 快捷键：`Alt+Shift+R` 开合抽屉（也可在脚本菜单里点"刚刚看过"）。
@@ -36,7 +36,7 @@ X（Twitter）首页时间线的"刚刚看过"抽屉：刷过、被顶掉的推�
 | 入口 | 工具栏图标 / 快捷键 | 脚本菜单命令 / `Alt+Shift+R` / 悬浮按钮 |
 | 手机端 | 不适用 | 适配（停靠发推按钮上方） |
 
-其余逻辑（抽取、监听、UI）与上游保持同步，上游更新后本仓库尽快跟进移植。
+其余逻辑（抽取、监听、UI）与上游保持同步，上游更新后本仓库尽快跟进移植。当前同步基准：上游 `7c2fdb4`（含筛选标签功能）。
 
 ## 许可
 
