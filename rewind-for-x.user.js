@@ -2,7 +2,7 @@
 // @name         Rewind for X 推文回看
 // @name:en      Rewind for X
 // @namespace    rewind-for-x
-// @version      0.2.0
+// @version      0.2.1
 // @description  回看 X 首页推荐里刚刚刷过、被新内容顶掉的推文。非 X 官方产品。
 // @description:en  Look back at the posts that just scrolled past or got replaced on your X home timeline. Not affiliated with X Corp.
 // @match        https://x.com/*
@@ -515,15 +515,19 @@
   let pages = 1;
   let shown = [];
 
+  // Whether there is a space between Chinese or Japanese and a word or a
+  // number varies by writer, so it shouldn't decide whether a search matches.
+  const CJK = '\\u2e80-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff\\uff00-\\uffef';
+  const NEAR_CJK = new RegExp(`(?<=[${CJK}])\\s+|\\s+(?=[${CJK}])`, 'g');
+  const norm = (s) => s.toLowerCase().replace(NEAR_CJK, '');
+
   function render() {
-    const q = search.value.trim().toLowerCase();
+    const q = norm(search.value.trim());
     shown = sorted();
     if (filter !== 'all') shown = shown.filter(FILTERS.find(([f]) => f === filter)[2]);
     if (q) {
       shown = shown.filter((i) =>
-        `${i.name}\n${i.handle}\n${i.text}\n${i.context}\n${i.quote ? `${i.quote.name}\n${i.quote.text}` : ''}`
-          .toLowerCase()
-          .includes(q)
+        norm(`${i.name}\n${i.handle}\n${i.text}\n${i.context}\n${i.quote ? `${i.quote.name}\n${i.quote.text}` : ''}`).includes(q)
       );
     }
     count.textContent = shown.length ? String(shown.length) : '';
